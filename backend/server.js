@@ -18,7 +18,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE']
     // Add other origins as needed, depending on your frontend application
 }));
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
 
 app.use(cookieParser());
 

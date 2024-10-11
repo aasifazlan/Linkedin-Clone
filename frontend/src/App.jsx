@@ -7,6 +7,9 @@ import Layout from "./components/Layout"
 import LoginPage from "./pages/auth/LoginPage"
 import SignupPage from "./pages/auth/SignupPage"
 import NotificationsPage from "./pages/NotificationsPage"
+import NetworkPage from "./pages/NetworkPage"
+import PostPage from "./pages/PostPage"
+import ProfilePage from "./pages/ProfilePage"
  
  
 
@@ -34,7 +37,10 @@ console.log("authUser", authUser);
       <Route path="/" element={authUser ? <HomePage /> : <Navigate to={"/login"} />} />
       <Route path="/signup" element={ <SignupPage />} />
       <Route path="/login" element={!authUser ?<LoginPage/> : <Navigate to={"/"} />} />
-	  <Route path="/notification" element={authUser ? <NotificationsPage/> : <Navigate to={"/"}/>} />
+	  <Route path="/notifications" element={authUser ? <NotificationsPage/> : <Navigate to={"/"}/>} />
+	  <Route path='/network' element={authUser ? <NetworkPage /> : <Navigate to={"/login"} />} />
+	  <Route path='/post/:postId' element={authUser ? <PostPage /> : <Navigate to={"/login"} />} />
+	  <Route path='/profile/:username' element={authUser ? <ProfilePage /> : <Navigate to={"/login"} />} />
      
     </Routes>
    </Layout>
