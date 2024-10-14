@@ -112,7 +112,7 @@ const RecommendedUser = ({ user }) => {
 	};
 
 	return (
-		<div className='flex items-center justify-between mb-4'>
+		<div className='flex items-center justify-between mb-4  '>
 			<Link to={`/profile/${user.username}`} className='flex items-center flex-grow'>
 				<img
 					src={user.profilePicture || "/avatar.png"}
